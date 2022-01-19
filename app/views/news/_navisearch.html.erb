@@ -1,0 +1,46 @@
+<div class='wp-pagenavi'>
+<span class='pages'>Page <%=@page%> sur <%=@nbpage%></span>
+
+<span class='extend'>…</span>
+<%(10..30).step(10).to_a.select{|t|t <= @nbpage.ceil(-1) }.each do |t|%>
+<%if @page.between?((t-11),t) || @page == t%>
+<%=
+       ("<span class='extend'>…</span>"+((@page-2)..(@page+2)).select{|x|x>0 && x<@nbpage}.map{|h|(link_to_unless((@page == h),h, searchpage_path(page: h), class: "larger page") do
+                "<span class='current'>#{h}</span>".html_safe
+                 end)}.join('')+"<span class='extend'>…</span>").html_safe
+    
+ %>
+
+<%elsif t <= @nbpage%>
+<%=
+    link_to_unless((@page == t),t, searchpage_path(page: t, s: params[:s]), class: "larger page") do
+       ("<span class='extend'>…</span>"+((t-2)..(t+2)).select{|x|x<@nbpage}.map{|h|(link_to_unless((@page == h),h, searchpage_path(page: h), class: "larger page") do
+                "<span class='current'>#{h}</span>".html_safe
+                 end)}.join('')+"<span class='extend'>…</span>").html_safe
+    end
+ %>
+
+<%end%>
+<%if @nbpage >= 30 %>
+<%=
+       ("<span class='extend'>…</span>"+((@page-2)..(@page+2)).map{|h|(link_to_unless((@page == h),h, searchpage_path(page: h), class: "larger page") do
+                "<span class='current'>#{h}</span>".html_safe
+                 end)}.join('')+"<span class='extend'>…</span>").html_safe
+    
+ %>
+<%end%>
+
+
+
+<span class='extend'>…</span>
+
+
+<%end%>
+<%if @page < @nbpage%>
+<a class="nextpostslink" rel="next" href="<%=searchpage_path(page: @page+1)%>">&raquo;</a>
+<%end%>
+<%if 5 < @nbpage%>
+    <a class="last" href="<%=searchpage_path(page: @nbpage,newscat:params[:newscat])%>">Dernière page &raquo;</a>
+<%end%>
+
+</div>

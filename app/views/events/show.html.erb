@@ -1,0 +1,193 @@
+ <section id="content">
+        
+	
+	<div class="main clearfix">
+
+	
+		
+
+
+
+
+		<!-- breadcrumbs -->
+		<div class="breadcrumbs clearfix">
+			
+<section class="breadcrumbs"><span xmlns:v="http://rdf.data-vocabulary.org/#"><span typeof="v:Breadcrumb"><a href="" rel="v:url" property="v:title">Accueil</a> &gt; <span rel="v:child" typeof="v:Breadcrumb"><a href="/agenda/" rel="v:url" property="v:title">Agenda</a> &gt; <span rel="v:child" typeof="v:Breadcrumb"><a href="/type-evenement/evenement/" rel="v:url" property="v:title">Évènement</a> &gt; <span class="breadcrumb_last"><%=@event.title%></span></span></span></span></span></section>		</div>
+		<!-- end of breadcrumbs -->
+
+
+		
+	<div class="content-col left">
+		<h1 class="page-title"><%=@event.title%></h1>
+		<article class="post">
+
+			<div class="meta roboto_b">
+				<div>
+                            <%=@event.categories.map{|g|(render "mycat", category: g)}.join(' / ').html_safe%>
+
+                                </div>
+				<div>					<%if @event.start_date%>Date de début :  <span><%=l(@event.start_date)%></span><%end%>
+					<%if @event.end_date%>Date de fin : <span><%=l(@event.end_date)%></span><%end%>
+								</div>
+				<div>					Lieu : <span><%=@event.lieu%></span>
+								</div>
+				<div>				</div>
+			</div>
+		</article>
+
+
+				<article class="post">
+			<img width="658" height="300" alt="<%=@event.title%>" title="<%=@event.title%>" class="" src="<%=@event.image%>" />			<br/><br/>
+		</article>
+		
+		<article class="post">
+			<%=@event.description.html_safe%>
+		</article>
+
+		<article class="post">
+			<div class="addthisZonePost">
+	<div class="addthis_toolbox addthis_default_style ">
+		<a class="addthis_button_preferred_1"></a>
+		<a class="addthis_button_preferred_2"></a>
+		<a class="addthis_button_preferred_3"></a>
+		<a class="addthis_button_preferred_4"></a>
+		<a class="addthis_button_compact"></a>
+	</div>
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50b78ce45daa20f0"></script>
+</div>
+		</article>
+
+
+		<div class="comments">
+			  <div class="comment-form">
+    <h2>Laisser un commentaire</h2>
+    <p class="cancel-comment-reply"><a rel="nofollow" id="cancel-comment-reply-link" href="/agenda/8eme-edition-la-journee-sportive-de-la-femme/#respond" style="display:none;">Cliquez ici pour annuler la réponse.</a></p>
+          <form action="/wp-comments-post.php" method="post" id="comment-form">
+                    <label for="author">Nom<span class="required">*</span></label>
+            <input type="text" class="field" name="author" id="author" value="" size="22" tabindex="1" aria-required='true' required='required'>
+
+            <label for="email">Email (ne sera pas publié)<span class="required">*</span></label>
+            <input type="email" class="field" name="email" id="email" value="" size="22" tabindex="2" aria-required='true' required='required'>
+                   <label for="author">Commentaire<span class="required">*</span></label>
+           <textarea name="comment" id="comment" class="textarea-field input-xlarge aria-required='true' required='required'" tabindex="4"></textarea>
+        <input name="submit" class="submit-button roboto_b" type="submit" id="submit" tabindex="5" value="Publier">
+        <input type='hidden' name='comment_post_ID' value='42650' id='comment_post_ID'>
+<input type='hidden' name='comment_parent' id='comment_parent' value='0'>
+        <p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="1db6c770b9" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="240"/></p>      </form>
+      </div><!-- /#respond -->
+		</div>
+	</div>	
+	
+	
+		
+
+
+		<aside class="right">
+			
+
+<ul>
+	<li>
+		<div class="search bonjour">
+			<form id="recherche" name="recherche" method="get" action="/">
+			  <input id="s" name="s" type="text" class="field" value="" placeholder="Rechercher" />
+			  <!-- <input type="submit" id="searchsubmit" value="Recherche" class="btn"> -->
+			</form>
+		</div>
+	</li>
+		<li>
+		<div class="aside-box clearfix">
+			<div class="box">
+				<h2>Actualités</h2>
+								<ul>
+<%=render collection: @lastnews, as: :news, partial: "news/actualite_item"%>												
+
+								</ul>
+			</div>
+			<a class="btn right" href="/actualites/">Plus d’actualités</a>
+		</div>
+	</li>
+	<li>
+		<div class="affiche-slider-c">
+			<h3 class="roboto_b">à l'Affiche</h3>
+						<div id="affiche-slider">
+							        <a href="/files/2022/05/JOURNEE-SPORTIVE-DE-LA-FEMME-MAQUETTE-2022.jpg" rel="SliderBlocSidebarAffiche" class="nofancybox"><img width="214" height="323" alt="Journée de la femme " title="Journée de la femme " class="sliderAffiche" src="/files/2022/05/JOURNEE-SPORTIVE-DE-LA-FEMME-MAQUETTE-2022-214x323.jpg" />
+</a>
+			    				        <a href="/files/2022/05/affiche-WEB.jpg" rel="SliderBlocSidebarAffiche" class="nofancybox"><img width="214" height="323" alt="Justina Rofou" title="Justina Rofou" class="sliderAffiche" src="/files/2022/05/affiche-WEB-214x323.jpg" />
+</a>
+			    				        <a href="/files/2022/04/WhatsApp-Image-2022-04-07-at-13.39.03.jpg" rel="SliderBlocSidebarAffiche" class="nofancybox"><img width="214" height="323" alt="Aisance Aquatique" title="Aisance Aquatique" class="sliderAffiche" src="/files/2022/04/WhatsApp-Image-2022-04-07-at-13.39.03-214x323.jpg" />
+</a>
+			    				        <a href="/files/2022/04/UN-DISPOSITIF-DE-SECURITE-MAQUETTE-2022.jpg" rel="SliderBlocSidebarAffiche" class="nofancybox"><img width="214" height="323" alt="DCPP" title="DCPP" class="sliderAffiche" src="/files/2022/04/UN-DISPOSITIF-DE-SECURITE-MAQUETTE-2022-214x323.jpg" />
+</a>
+			    				        <a href="/files/2022/04/CONSEIL-MUNICIPAL-SENIORS-MAQUETTE-2022.jpg" rel="SliderBlocSidebarAffiche" class="nofancybox"><img width="214" height="323" alt="Conseil Municipal des Seniors" title="Conseil Municipal des Seniors" class="sliderAffiche" src="/files/2022/04/CONSEIL-MUNICIPAL-SENIORS-MAQUETTE-2022-214x323.jpg" />
+</a>
+			    				        <a href="/agenda/jeu-concours-djok-start-up/" rel="SliderBlocSidebarAffiche" class="nofancybox"><img width="214" height="323" alt="Djok Start Up" title="Djok Start Up" class="sliderAffiche" src="/files/2022/03/IMG-20220324-WA0001-214x323.jpg" />
+</a>
+			    				        <a href="/files/2021/07/APS-MAQUETTE-2021-2022.jpg" rel="SliderBlocSidebarAffiche" class="nofancybox"><img width="214" height="323" alt="Activités périscolaires et extrascolaires" title="Activités périscolaires et extrascolaires" class="sliderAffiche" src="/files/2021/07/APS-MAQUETTE-2021-2022-214x323.jpg" />
+</a>
+			    				        <a href="/files/2020/07/WhatsApp-Image-2020-07-08-at-09.39.36.jpeg" rel="SliderBlocSidebarAffiche" class="nofancybox"><img width="214" height="323" alt="OPAH RU" title="OPAH RU" class="sliderAffiche" src="/files/2020/07/WhatsApp-Image-2020-07-08-at-09.39.36-214x323.jpeg" />
+</a>
+			    				        <a href="/agenda/le-pass-culture-en-guyane/" rel="SliderBlocSidebarAffiche" class="nofancybox"><img width="214" height="323" alt="Je fête mes 18 ans avec le pass Culture" title="Je fête mes 18 ans avec le pass Culture" class="sliderAffiche" src="/files/2019/07/PASS_CULTURE_A3-page-001-214x323.jpg" />
+</a>
+			    				        <a href="/agenda/fruits-et-legumes-a-lecole/" rel="SliderBlocSidebarAffiche" class="nofancybox"><img width="214" height="323" alt="Fruits et légumes à l'école" title="Fruits et légumes à l'école" class="sliderAffiche" src="/files/2018/09/FRUIT-A-LA-RECRE-MAQUETTE-1-214x323.jpg" />
+</a>
+			    				        <a href="/agenda/le-fond-de-participations-des-habitants/" rel="SliderBlocSidebarAffiche" class="nofancybox"><img width="214" height="323" alt="Le Fond de Participation des Habitants" title="Le Fond de Participation des Habitants" class="sliderAffiche" src="/files/2017/10/Flyers-com-FPH-2017-214x323.jpg" />
+</a>
+			    				        <a href="/informations-pratiques/le-tri-selectif/" rel="SliderBlocSidebarAffiche" class="nofancybox"><img width="214" height="323" alt="Tri sélectif" title="Tri sélectif" class="sliderAffiche" src="/files/2015/07/bus-100x78-BAT-214x323.jpg" />
+</a>
+			    				</div>
+			<div id="affiche-nav">
+				<div id="thumbs_a">
+					<img width="52" height="73" alt="Journée de la femme " title="Journée de la femme " class="" src="/files/2022/05/JOURNEE-SPORTIVE-DE-LA-FEMME-MAQUETTE-2022-52x73.jpg" />
+<img width="52" height="73" alt="Justina Rofou" title="Justina Rofou" class="" src="/files/2022/05/affiche-WEB-52x73.jpg" />
+<img width="52" height="73" alt="Aisance Aquatique" title="Aisance Aquatique" class="" src="/files/2022/04/WhatsApp-Image-2022-04-07-at-13.39.03-52x73.jpg" />
+<img width="52" height="73" alt="DCPP" title="DCPP" class="" src="/files/2022/04/UN-DISPOSITIF-DE-SECURITE-MAQUETTE-2022-52x73.jpg" />
+<img width="52" height="73" alt="Conseil Municipal des Seniors" title="Conseil Municipal des Seniors" class="" src="/files/2022/04/CONSEIL-MUNICIPAL-SENIORS-MAQUETTE-2022-52x73.jpg" />
+<img width="52" height="73" alt="Djok Start Up" title="Djok Start Up" class="" src="/files/2022/03/IMG-20220324-WA0001-52x73.jpg" />
+<img width="52" height="73" alt="Activités périscolaires et extrascolaires" title="Activités périscolaires et extrascolaires" class="" src="/files/2021/07/APS-MAQUETTE-2021-2022-52x73.jpg" />
+<img width="52" height="73" alt="OPAH RU" title="OPAH RU" class="" src="/files/2020/07/WhatsApp-Image-2020-07-08-at-09.39.36-52x73.jpeg" />
+<img width="52" height="73" alt="Je fête mes 18 ans avec le pass Culture" title="Je fête mes 18 ans avec le pass Culture" class="" src="/files/2019/07/PASS_CULTURE_A3-page-001-52x73.jpg" />
+<img width="52" height="73" alt="Fruits et légumes à l'école" title="Fruits et légumes à l'école" class="" src="/files/2018/09/FRUIT-A-LA-RECRE-MAQUETTE-1-52x73.jpg" />
+<img width="52" height="73" alt="Le Fond de Participation des Habitants" title="Le Fond de Participation des Habitants" class="" src="/files/2017/10/Flyers-com-FPH-2017-52x73.jpg" />
+<img width="52" height="73" alt="Tri sélectif" title="Tri sélectif" class="" src="/files/2015/07/bus-100x78-BAT-52x73.jpg" />
+				</div>
+				<a class="arrow next" id="affiche-n" href="#">next</a>
+				<a class="arrow prev" id="affiche-p" href="#">prev</a>
+			</div>
+		</div>
+	</li>
+	<li>
+		<div class="fb-widget"><iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FVille-de-Cayenne%2F233224526723285&amp;width=220&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=true&amp;appId=142784129097561" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:220px; height:290px;" allowTransparency="true"></iframe></div>
+	</li>
+	<li>
+		<div class="aside-box clearfix">
+			<div class="box">
+				<h2>Agenda</h2>
+				<ul>
+											<li><a href="/agenda/8eme-edition-la-journee-sportive-de-la-femme/"><%=@event.title%></a> Le Dimanche 22 Mai</li>
+												<li><a href="/agenda/jeu-concours-djok-start-up/">JEU-CONCOURS DJOK START UP</a> Le Mardi 01 Mars</li>
+												<li><a href="/agenda/appels-aux-associations-pour-subventionnement-projet-2022/">Appels aux associations pour subventionnement projet 2022</a> Le Mercredi 09 Mars</li>
+												<li><a href="/agenda/appel-a-candidature-maison-des-initiatives-locales/">Appel à candidature &#8211; Maison des Initiatives Locales</a> Le Mardi 27 Avril</li>
+												<li><a href="/agenda/opah-ru/">OPAH RU</a> Le Mercredi 08 Juillet</li>
+												<li><a href="/agenda/dematerialisation-des-factures/">Dématérialisation des factures</a> Le Mercredi 01 Janvier</li>
+												<li><a href="/agenda/espace-citoyens/">Espace citoyens EN LIGNE</a> Le Mercredi 11 Decembre</li>
+												<li><a href="/agenda/avis-de-mise-a-disposition-du-public-de-la-convention-opah-ru-de-la-ville-de-cayenne-2019-2024/">Avis de mise à disposition du public de la Convention OPAH-RU de la Ville de Cayenne 2019-2024</a> Le Mercredi 27 Novembre</li>
+												<li><a href="/agenda/appel-a-projets-ma-boutique-a-lessai/">Appel à projets Ma boutique à l&rsquo;essai</a> Le Jeudi 17 Octobre</li>
+										</ul>
+			</div>
+			<a class="btn right" href="/agenda/">Plus d’actualités</a>
+		</div>
+	</li>
+</ul>
+
+
+
+
+
+		</aside>
+
+	</div>
+
+
+
+				</section>
+				<!-- end of content -->

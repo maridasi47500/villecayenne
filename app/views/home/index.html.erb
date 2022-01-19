@@ -1,0 +1,222 @@
+<!-- content -->
+        <section id="content">
+        
+
+<section class="featured-section clearfix">
+	<div class="sliders left clearfix">
+		<div class="slider-c left">
+    
+
+    <div id="slider_m">
+                    <%=render collection: @somenews, partial: "featureditemnews", as: :news%>
+                    
+                    
+                    
+                    
+                    
+            </div>
+
+
+
+    <div class="thumbs_m">
+        <div id="thumbs_m">
+        <%=render partial: "somenewsindicator", :collection =>@somenews, as: :t %>
+        
+        </div>
+    </div>
+    <a class="arrow prev" id="prev-m" href="#">arrow</a>
+    <a class="arrow next" id="next-m" href="#">arrow</a>
+
+
+</div>
+		<div class="slider-c right clearfix">
+			<div class="top">
+				<h2 class="roboto_m">Actus récentes</h2>
+				<ul>
+					<li><a id="prev-r" class="arrow prev" href="#">prev</a></li>
+					<li><a id="next-r" class="arrow next" href="#">next</a></li>
+				</ul>
+			</div>
+			<div id="slider-r">
+			
+							
+				        
+						<!-- ITEM -->
+				
+				<%=render partial: "news", collection: @news, as: :news%>
+                                        
+                                        
+			<!-- /ITEM -->	
+			
+			
+				
+						</div>
+			<a class="btn roboto_m right" href="/actualites/">Toutes les actualités</a>
+		</div>
+	</div>
+	<aside class="right">
+		<div class="news-box clearfix">
+			<h2>Mot du Maire</h2>
+			<p style="text-align: justify;"><a href="/files/2020/11/WhatsApp-Image-2020-10-29-at-08.13.15.jpeg" rel="attachment wp-att-41491"><img class="wp-image-41491 alignleft" src="/files/2020/11/WhatsApp-Image-2020-10-29-at-08.13.15.jpeg" alt="" width="180" height="240" /></a></p>
+			<a class="left" href="/contact/">&gt; contact</a>
+			<a href="/le-maire/" class="right nobottommargin">En savoir plus</a>
+		</div>
+		<%=render "weather", forecast: @weather%>
+	</aside>
+</section>
+
+<div class="testimonials roboto_i clearfix">
+		<a class="icone" href="http://cayenne.emairie.fr/communiques/"></a>
+	<div id="test-slider">
+		
+						<%=render collection: @notes, partial: "note", as: :note%>
+							
+					</div>
+</div>
+
+<div class="main clearfix">
+
+	<div class="content-col left">
+
+		<div class="news-container home-section clearfix">
+			<h3>Agenda</h3>
+			<a id="prev-news" class="arrow prev" href="#">prev</a>
+			<a id="next-news" class="arrow next" href="#">next</a>
+			<div id="news-slider">
+				
+                        <%=render partial: "agendablock", collection: @events, as: :events%>
+				
+
+
+			</div>
+			<a class="btn right" href="/agenda/">Tous les événements</a>
+		</div>
+
+		<div class="boxes home-section clearfix">
+                        <%if Rubrique.zoom%>
+			<div class="box left">
+				<h3>Zoom sur...</h3>
+				<div class="body clearfix">
+					<%=render "zoomrubrique", rubrique: Rubrique.zoom%>
+				</div>
+			</div>
+                        <%end%>
+				<!-- Ajout de ce bloc pour pallier au manque de video -->
+<!-- 			<div class="box right">
+				<div class="body clearfix">
+					<a class="right" href="http://cayenne.emairie.fr/zac-hibiscus">
+					<img class="" width="289" height="117" src="http://cayenne.emairie.fr/files/2014/01/Zac-Hibiscus-Copie-2-318x117.jpg" title="ZAC IBISCUS" alt="ZAC IBISCUS">
+					</a>
+					<h4><a href="http://cayenne.emairie.fr/zac-hibiscus">La ZAC Hibiscus</a></h4>
+					<p>La Ville de Cayenne pour répondre de la manière la plus complète possible aux objectifs de production de logements et de mixité en milieu urbain a sollicité la réalisation d’un nouveau quartier autour du Pôle Universitaire. </p>
+					<a href="http://cayenne.emairie.fr/zac-hibiscus">&gt; Accéder à la rubrique</a>
+				</div>
+			</div> -->
+			<!-- Désactivation du bloc video en attendant -->
+			<%if Video.zoom%>
+                        <div class="box right">
+				<h3>Vidéos</h3>
+				<div class="body clearfix">
+
+
+					<iframe width="294" height="162" src="//www.youtube.com/embed/https://youtu.be/Bm_SyFqR0H0" frameborder="0" allowfullscreen></iframe>						    <h4><a href="#">Le recensement, comment ça marche ?</a></h4>
+						    <p>&nbsp; &nbsp;</p>
+						    <a href="/videos/">&gt; Voir toutes les vidéos</a>
+						    				</div>
+			</div> 
+                        <%end%>
+			<!-- fin du bloc video -->
+		
+		</div>
+
+		<div class="list-boxes home-section clearfix">
+			<h3>En un clic</h3>
+						        <div class="box first blue">
+			        	<h5>Vie pratique</h5>
+			        	<ul>
+			            	                    		<li><a href="/files/2015/08/planning-semaine-32-août-2015.pdf">Travaux hebdomadaire</a></li>
+			                    	                    		<li><a href="http://cayenne.emairie.fr/transports-lignes-horaires-tarifs">Transports</a></li>
+			                    	                    		<li><a href="/files/2015/08/calendrier-collecte-Cayenne-2015.pdf">Collecte des déchets</a></li>
+			                    	                    		<li><a href="/files/2014/08/BULLETIN-JUILLET-OT.jpg">Bulletin de l'Office de Tourisme</a></li>
+			                    			        	</ul>
+			        </div>
+			       <!--   -->
+			    			        <div class="box  black">
+			        	<h5>Accès rapides</h5>
+			        	<ul>
+			            	                    		<li><a href="http://cayenne.emairie.fr/communiques">Communiqués de la Ville</a></li>
+			                    	                    		<li><a href="https://villedecayenne.espace-famille.net/">Espace Famille</a></li>
+			                    	                    		<li><a href="http://cayenne.emairie.fr/inscription-scolaire">Inscriptions scolaires</a></li>
+			                    	                    		<li><a href="/files/2014/04/LISTE-DES-ECOLES-ET-COORDONNES-DE-LA-VILLE-DE-CAYENNE-MISE-A-JOUR-04-AVRIL-2014-2.pdf">Annuaire des Ecoles</a></li>
+			                    	                    		<li><a href="/files/2021/03/Menu-Mars-2021-écoles-validé-mis-en-forme.pdf">Menu scolaire du mois</a></li>
+			                    			        	</ul>
+			        </div>
+			       <!--   -->
+			    			        <div class="box  green">
+			        	<h5>Téléprocédures</h5>
+			        	<ul>
+			            	                    		<li><a href="/files/2015/06/QUESTIONNAIRE-DE-SATISFACTION.pdf">Enquête de satisfaction</a></li>
+			                    	                    		<li><a href="/?page_id=15036&preview=true">Sport-Dossiers subvention</a></li>
+			                    	                    		<li><a href="/teleservices/particuliers/etat-civil/">Etat Civil</a></li>
+			                    	                    		<li><a href="http://cayenne.emairie.fr/passeports-et-cni/">Passeport/ CNI</a></li>
+			                    	                    		<li><a href="http://v.cayenne.marcoweb.fr">Marchés publics</a></li>
+			                    			        	</ul>
+			        </div>
+			       <!--  			        	<a class="btn right specialElement" href="/teleservices/">Toutes les procédures</a>
+			        	 -->
+			    
+		</div>
+
+		<!-- Désactivation 
+		<div class="bottom-images clearfix">
+						        <a  class="left"  href="/epidemie-stop-au-chikungunya/"><img width="318" height="117" alt="ALERTE CHIKUNGUNYA" title="ALERTE CHIKUNGUNYA" class="" src="/files/2014/04/CHIKUNGUNYA-318x117.jpg" />
+</a>
+			    				        <a  class="right"  href="/files/2014/08/journal-PDRU2.pdf"><img width="318" height="117" alt="Journal PDRU 2" title="Journal PDRU 2" class="" src="/files/2014/08/journal-PDRU2-318x117.jpg" />
+</a>
+			    				        <a  class="left"  href=""><img width="318" height="117" alt="Annuaire de la Mairie de Cayenne" title="Annuaire de la Mairie de Cayenne" class="" src="/files/2013/08/images_b_1.jpg" />
+</a>
+			    				        <a  class="right"  href="/epidemie-stop-au-chikungunya/"><img width="318" height="117" alt="Epidémie, stop  au Chikungunya" title="Epidémie, stop  au Chikungunya" class="" src="/files/2014/06/Aedes-Aegypti-mosquito-web-318x117.jpg" />
+</a>
+			    			</div> -->
+	</div>
+	<aside class="right">
+		<ul>
+			<li>
+				<div class="search">
+					<form id="recherche" name="recherche" method="get" action="/">
+					  <input id="s" name="s" type="text" class="field" value="" placeholder="Rechercher" />
+					</form>
+				</div>
+			</li>
+			<li>
+				<div class="affiche-slider-c">
+					<h3 class="roboto_b">à l'Affiche</h3>
+					
+					<div id="affiche-slider">
+		<%=render collection: @alaffiche, partial: "home/lienaffiche", as: :news %>						
+		
+					    						
+</div>
+					<div id="affiche-nav">
+						<div id="thumbs_a">
+<%=render collection: @alaffiche, partial: "home/imageaffiche", as: :news %>						
+</div>
+						<a class="arrow next" id="affiche-n" href="#">next</a>
+						<a class="arrow prev" id="affiche-p" href="#">prev</a>
+					</div>
+				</div>
+			</li>
+						<li>
+				<div class="fb-widget"><iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FVille-de-Cayenne%2F233224526723285&amp;width=220&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=true&amp;appId=142784129097561" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:220px; height:290px;" allowTransparency="true"></iframe></div>
+			</li>
+		</ul>
+	</aside>
+
+</div>
+		
+				
+
+
+
+				</section>
+				<!-- end of content -->

@@ -1,0 +1,1 @@
+<li><a href="<%=showmyevent_path(title: event.title.parameterize)%>"><%=event.title%></a> <%=l(event.created_at, format: ((event.created_at.year == Date.today.year) ? :longwithoutyear : :longwithyear)).capitalize%></li>

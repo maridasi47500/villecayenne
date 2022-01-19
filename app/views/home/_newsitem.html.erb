@@ -1,0 +1,6 @@
+<div class="item-b">
+<a href="<%=showmynews_path(title: news.title.parameterize, newscat: (news.categories[0].try(:name)||"mycat"))%>"><img width="156" height="81" alt="<%=news.title%>" title="<%=news.title%>" class="" src="<%=news.image%>" />
+</a>
+<p><a href="<%=showmynews_path(title: news.title.parameterize, newscat: (news.categories[0].try(:name)||"mycat"))%>"><%=news.title.truncate(30)%></a></p>
+<span>Publiée le <%=l(news.created_at, format: :datefr)%></span>
+</div>

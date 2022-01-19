@@ -1,0 +1,15 @@
+<article class="post-c clearfix" id="post-<%=news.id%>">
+		<h2><a href="<%=showmynews_path(title: news.title.parameterize, newscat: (news.categories[0].try(:name)||"mycat"))%>"><%=news.title%></a></h2>
+		<figure class="left">
+			<a href="<%=showmynews_path(title: news.title.parameterize, newscat: (news.categories[0].try(:name)||"mycat"))%>">
+				<img width="170" height="170" alt="<%=news.title%>" title="<%=news.title%>" class="" src="<%=news.image%>" />			</a>
+		</figure>
+		<div class="entry">
+			<span class="meta"><%news.categories.each do |cat|%><a href="/<%=cat.url%>/"><%=cat.name%></a> <%end%> <%=l(news.created_at,format: :datefr)%></span>
+			<p>
+                        <%=strip_tags(simple_format(news.content.to_s.html_safe,{},{sanitize: true})).truncate(300,separator: " ")%>
+                        </p>
+			<a href="<%=showmynews_path(title: news.title.parameterize, newscat: (news.categories[0].try(:name)||"mycat"))%>" class="more">
+				Lire la suite			</a>
+		</div>
+	</article>

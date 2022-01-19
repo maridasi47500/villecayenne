@@ -1,0 +1,34 @@
+<div class="wheather-box">
+			<div class="left">
+				<span><%=l(forecast.date,format: :jourseul)%></span>
+				<br/><%=l(forecast.date,format: :jouretmois)%><br/>
+				<span class="temp roboto_m">
+        <div id="wp-forecastB" class="wp-forecast">
+<div class="wp-forecast-curr">
+<div class="wp-forecast-curr-head"><div><%=forecast.city%></div>
+</div>
+<div class="wp-forecast-curr-block"><div class='wp-forecast-curr-right'><%=forecast.temperature%>&deg;C</div>
+</div>
+<div class="wp-forecast-curr-details"></div>
+</div>
+<div class="wp-forecast-fc">
+</div>
+</div>
+</span>
+			</div>
+			<div class="right">
+				<div id="wp-forecastA" class="wp-forecast">
+<div class="wp-forecast-curr">
+<div class="wp-forecast-curr-head"><div><%=forecast.city%></div>
+</div>
+<div class="wp-forecast-curr-block"><div class='wp-forecast-curr-left'><img class='wp-forecast-curr-left' src='/plugins/wp-forecast/icons/<%=forecast.icon%>.png' alt='Surtout nuageux' width='64' height='40' /></div>
+<div class='wp-forecast-curr-right'></div>
+</div>
+<div class="wp-forecast-curr-details"></div>
+</div>
+<div class="wp-forecast-fc">
+</div>
+</div>
+				<!-- <a href="#">&gt;Toutes les infos météo</a> -->
+			</div>
+		</div>

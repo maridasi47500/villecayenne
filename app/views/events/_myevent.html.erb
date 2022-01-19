@@ -1,0 +1,23 @@
+<article class="post-c clearfix" id="post-<%=event.id%>">
+		<h2><a href="<%=showmyevent_path(title:event.title.parameterize)%>"><%=event.title%></a></h2>
+		<figure class="left">
+			<a href="<%=showmyevent_path(title:event.title.parameterize)%>">
+				<img width="170" height="170" alt="<%=event.title%>" class="" src="<%=event.image%>" />			</a>
+		</figure>
+		<div class="entry">
+			<span class="meta">
+
+                            <%=event.categories.map{|g|(render "mycat", category: g)}.join(' / ').html_safe%>
+: 
+
+								Date de début : <small><%=event.start_date ? l(event.start_date, format: :madate) : nil%></small>
+				Date de fin : <small><%=event.end_date ? l(event.end_date, format: :madate) : nil%></small>
+							
+			</span>
+			<p>
+<%=strip_tags(event.description.to_s).truncate(300, separator: ' ')%>                            
+                            </p>
+			<a href="<%=showmyevent_path(title:event.title.parameterize)%>" class="more">
+				Lire la suite			</a>
+		</div>
+	</article>

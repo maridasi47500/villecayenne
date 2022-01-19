@@ -1,0 +1,127 @@
+        <!-- content -->
+        <section id="content">
+        
+	
+	<div class="main clearfix">
+
+	
+		
+
+
+
+
+		<!-- breadcrumbs -->
+		<div class="breadcrumbs clearfix">
+			
+<section class="breadcrumbs"><span xmlns:v="http://rdf.data-vocabulary.org/#"><span typeof="v:Breadcrumb"><a href="http://www.ville-cayenne.fr" rel="v:url" property="v:title">Accueil</a> &gt; <span class="breadcrumb_last">Videos</span></span></span></section>		</div>
+		<!-- end of breadcrumbs -->
+
+		
+		
+<div class="content-col left">
+	<h1 class="page-title"><%=@video.title%></h1>
+		<article class="post">
+
+			<ul class="meta roboto_b_surcharge">
+				<li><%@video.categories.each do |t|%><a href="/type-videos/<%=t.name.parameterize%>/" rel="tag"><%=t.name%></a> <%end%> </li>
+				<li>le <%=l(@video.created_at,format: :long1)%></li>
+			</ul>
+		</article>
+
+		<article class="post">
+			<iframe width="658" height="400" src="<%=@video.ytlink%>" frameborder="0" allowfullscreen></iframe>		</article>
+
+
+		<article class="post">
+					</article>
+
+		<article class="post">
+			<div class="addthisZonePost">
+	<div class="addthis_toolbox addthis_default_style ">
+		<a class="addthis_button_preferred_1"></a>
+		<a class="addthis_button_preferred_2"></a>
+		<a class="addthis_button_preferred_3"></a>
+		<a class="addthis_button_preferred_4"></a>
+		<a class="addthis_button_compact"></a>
+	</div>
+	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-50b78ce45daa20f0"></script>
+</div>
+		</article>
+
+</div>
+
+
+
+		
+
+
+		<aside class="right">
+			
+
+<ul>
+	<li>
+		<div class="search bonjour">
+			<form id="recherche" name="recherche" method="get" action="/">
+			  <input id="s" name="s" type="text" class="field" value="" placeholder="Rechercher" />
+			  <!-- <input type="submit" id="searchsubmit" value="Recherche" class="btn"> -->
+			</form>
+		</div>
+	</li>
+		<li>
+		<div class="aside-box clearfix">
+			<div class="box">
+				<h2>Actualités</h2>
+								<ul>
+<%=render collection: @lastnews, as: :news, partial: "news/actualite_item"%>												
+
+								</ul>
+			</div>
+			<a class="btn right" href="/actualites/">Plus d’actualités</a>
+		</div>
+	</li>
+	<li>
+		<div class="affiche-slider-c">
+			<h3 class="roboto_b">à l'Affiche</h3>
+						<div id="affiche-slider">
+<%=render collection: @alaffiche, partial: "home/lienaffiche", as: :news %>	
+			
+			    				</div>
+			<div id="affiche-nav">
+				<div id="thumbs_a">
+<%=render collection: @alaffiche, partial: "home/imageaffiche", as: :news %>	
+
+				</div>
+				<a class="arrow next" id="affiche-n" href="#">next</a>
+				<a class="arrow prev" id="affiche-p" href="#">prev</a>
+			</div>
+		</div>
+	</li>
+	<li>
+		<div class="fb-widget"><iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FVille-de-Cayenne%2F233224526723285&amp;width=220&amp;height=290&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=true&amp;appId=142784129097561" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:220px; height:290px;" allowTransparency="true"></iframe></div>
+	</li>
+	<li>
+		<div class="aside-box clearfix">
+			<div class="box">
+				<h2>Agenda</h2>
+				<ul>
+<%=render collection: @someevents, as: :event, partial: "events/otherevent"%>
+
+				</ul>
+			</div>
+			<a class="btn right" href="/agenda/">Plus d’actualités</a>
+		</div>
+	</li>
+</ul>
+
+
+
+
+
+		</aside>
+
+	</div>
+
+
+
+				</section>
+				<!-- end of content -->

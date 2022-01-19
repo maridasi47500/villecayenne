@@ -1,0 +1,6 @@
+<a href="<%=rubrique.url%>">
+						<img width="289" height="159" alt="<%=rubrique.title%>" title="<%=rubrique.title%>" class="" src="<%=rubrique.image%>" />
+					</a>
+					<h4><a href="<%=rubrique.url%>"><%=rubrique.title%></a></h4>
+					<p><%=rubrique.description.html_safe.truncate(1000,separator:'.',omission:'...').html_safe%></p>
+					<a href="<%=rubrique.url%>">&gt; Accéder à la rubrique</a>

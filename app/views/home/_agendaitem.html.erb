@@ -1,0 +1,17 @@
+			
+					
+						<!-- ITEM AGENDA -->
+						<div class="item">
+							<span class="cat_01">Évènement</span>
+							<a href="<%=showmyevent_path(title: event.title.parameterize)%>">
+								<img width="199" height="123" alt="<%=event.title%>" title="<%=event.title%>" class="" src="<%=event.image%>" />
+							</a>
+							<h4><a href="<%=showmyevent_path(title: event.title.parameterize)%>"><%=event.title%></a></h4>
+							<ul>
+								<li><%=event.start_date ? l(event.start_date, format: ((event.start_date.year == Date.today.year) ? :agendanotyear : :agendayear)) : nil%></li>
+								<li><%=event.end_date ? l(event.end_date, format: ((event.end_date.year == Date.today.year) ? :agendanotyear : :agendayear)) : nil%></li>
+							</ul>
+						</div>
+						<!--  / ITEM AGENDA -->
+
+							

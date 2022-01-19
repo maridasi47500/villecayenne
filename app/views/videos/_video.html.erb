@@ -1,0 +1,19 @@
+<article class="post-c clearfix" id="post-<%=video.id%>">
+		<h2><a href="<%=showvideo_path(title: video.title.parameterize)%>"><%=video.title%></a></h2>
+		<figure class="left">
+			<a href="<%=showvideo_path(title: video.title.parameterize)%>">
+				<img width="" height="" alt="<%=video.title%>" title="<%=video.title%>" class="" src="<%=video.image%>" />			</a>
+		</figure>
+		<div class="entry">
+			<span class="meta">
+
+				<%video.categories.each do |t|%><a href="/type-videos/<%=t.url%>/" rel="tag"><%=t.name%></a> <%end%> : 
+
+				<%=l(video.created_at, format: (video.created_at.year == Date.today.year ? :shortdate : :long1))%>
+			</span>
+			<p>
+							</p>
+			<a href="<%=showvideo_path(title: video.title.parameterize)%>" class="more">
+				Lire la suite			</a>
+		</div>
+	</article>
